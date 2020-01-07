@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
+  {{ if .Site.DisqusShortname }}
+  <link rel="dns-prefetch" href="//{{ .Site.DisqusShortname }}.disqus.com" />
+  {{ end }}
+  <link rel="canonical" href="{{ .URL }}" />
+  {{ if eq .URL "/" }}
+  <meta name="description" content="{{ .Site.Title }}">
+  {{ else if in .URL "/post/" }}
+  <meta name="description" content="{{ .Title }}">
+  {{ end }}
+  <title>
+	  {{ if eq .URL "/" }}
+	    {{ .Site.Title }}
+	  {{ else if in .URL "/post/" }}
+	    {{ .Title }} | {{ .Site.Title }}
+	  {{ else if in .URL "/tags/" }}
+	    Tags | {{ .Site.Title }}
+	  {{ else }}
+	    {{ .Title }} | {{ .Site.Title }}
+	  {{ end }}
+  </title>
+
+  {{ if in .URL "/post/" }}
+  <meta property="og:site_name" content="{{ .Site.Title }}" />
+  <meta property="og:locale" content="{{ .Site.LanguageCode }}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{ .Title }}" />
+  <meta property="og:description" content="{{ .Title }} | {{ .Site.Title }}" />
+  <meta property="og:url" content="{{ .URL }}" />
+  {{ end }}
+
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/uikit/2.27.2/css/uikit.min.css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/{{ .Site.Params.SyntaxHighlightTheme }}" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+	<div class="uk-block uk-block-large uk-block-muted">
+		<div class="uk-container uk-container-center">
+			<div class="uk-grid">
+				<div class="uk-width-large-1-10 uk-hidden-medium uk-hidden-small"></div>
+				<div class="uk-width-large-8-10 uk-width-medium-1-1 uk-width-small-1-1">
+          <div id="header" class="clearfix">
+            <div class="uk-float-left">
+              <h2><a href="/">{{ .Site.Title }}</a></h2>
+            </div>
+            <div class="uk-float-right">
+              <a href="/" class="uk-button">Home</a>
+            </div>
+          </div>
+				</div>
+				<div class="uk-width-large-1-10 uk-hidden-medium uk-hidden-small"></div>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,16 @@
+{{ partial "header.html" . }}
+  <div class="uk-block uk-block-default">
+    <div class="uk-container uk-container-center">
+      <div class="uk-grid">
+        <div class="uk-width-large-1-10 uk-hidden-medium uk-hidden-small"></div>
+        <div class="uk-width-large-8-10 uk-width-medium-1-1 uk-width-small-1-1">
+          {{ range .Data.Pages }}
+            {{ .Render "list" }}
+          {{ end }}
+        </div>
+        <div class="uk-width-large-1-10 uk-hidden-medium uk-hidden-small"></div>
+      </div>
+    </div>
+  </div>
+
+{{ partial "footer.html" . }}

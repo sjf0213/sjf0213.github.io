@@ -1,0 +1,24 @@
+BaseUrl = ""
+LanguageCode = ""
+Title = ""
+DisqusShortname = ""
+GoogleAnalytics = ""
+
+[Params]
+  Author = ""
+  Birth = ""
+  DateFormat = "Mon, Jan 2, 2006"
+  GravatarHash = ""
+  Facebook = ""
+  Twitter = ""
+  Github = ""
+  perPage = 10
+  ShowRelatedPost = true
+  ShowTagCloud = false
+  SyntaxHighlightTheme = "github.min.css"
+  infiniteScroll = true # if true, pagination will disabled.
+
+[Indexes]
+  tag = "tags"
+
+# MetadataFormat = "yaml"
